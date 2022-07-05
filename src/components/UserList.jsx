@@ -2,12 +2,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export const UserList = () => {
-  const users = useSelector((state) => state.users);
+  const { list: users, status, error } = useSelector((state) => state.users);
 
   return (
-    <div>
+    <div className="Users">
       <h1>Users</h1>
-      {users.length}
+      <p>
+        Users: {users.length}. Status: {status}
+      </p>
+      <p>{error && <h4>{error}</h4>}</p>
     </div>
   );
 };

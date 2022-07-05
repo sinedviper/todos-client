@@ -5,10 +5,12 @@ export const TodoList = () => {
   const { list: todos, status, error } = useSelector((state) => state.todos);
 
   return (
-    <div>
+    <div className="Todos">
       <h1>TodoList</h1>
-      Todos: {todos.length}. Status: {status}
-      {error && <h4>{error}</h4>}
+      <p>
+        Todos: {todos.length}. Status: {status}
+      </p>
+      <p>{error && <h4>{error}</h4>}</p>
     </div>
   );
 };
